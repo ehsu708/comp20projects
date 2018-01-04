@@ -1,0 +1,17 @@
+/* style.css for annotation webpage */
+h1 {
+	text-align: center;
+	font-family: 'Slabo 27px', serif;
+}
+video {
+	display: block;
+	margin: 0 auto;
+}
+
+#lyrics {
+	text-align: center;
+	margin-right: 200px;
+	margin-left: 200px;
+	font-family: 'Slabo 27px', serif;
+}
+

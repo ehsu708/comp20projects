@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>A Classic</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+</head>
+
+<body>
+
+<h1 id="title">A Classic</h1>
+
+<video src="https://www.cs.tufts.edu/comp/20/classic.mp4" id="a_classic" controls></video>
+<div id="lyrics"></div>
+
+<script>
+	var lyric1 = "Children have You ever met the Bogeyman before <br/>"+
+				 "No, of course You haven't for You're much too good, I'm sure; <br/>"+
+				 "Don't You be afraid of him if he should visit You,<br/>"+
+				 "He's a great big coward, so I'll tell You what to do";
+	var lyric2 = "Hush, hush, hush, here comes the Bogeyman,<br/>"+
+				  "Don't let him come too close to You, he'll catch you if he can.<br/>"+
+    			  "Just pretend that you're a crocodile<br/>"+
+				  "And you will find that Bogeyman will run away a mile.";
+	var lyric3 = "Say Shoo shoo and stick him with a pin<br/>"+
+				  "Bogeyman will very nearly jump out of his skin<br/>"+
+			      "Say buzz buzz just like the wasps that sting<br/>"+
+        		  "Bogeyman will think you are an elephant with wings";
+ 	var lyric4 = "Hush, hush, hush, here comes the Bogeyman<br/>"+
+				  "Tell him you've got soldiers in your bed<br/>"+
+		   		  "For he will never guess that they are only made of lead";
+	var lyric5 = "Say Hush hush, he'll think that you're asleep<br/>"+
+			  	  "If you make a lovely snore away he'll softly creep<br/>"+
+		  	  	  "Sing this tune you children one and all<br/>"+
+			  	  "Bogeyman will run away, he'll think it's Henry Hall!";
+	var lyric6 = "When the shadows of the evening creep across the sky<br/>"+
+		   	      "And your Mummy comes upstairs to sing a lullaby<br/>"+
+			      "Tell her that the bogeyman no longer frightens you<br/>"+
+			      "Uncle Henry's very kindly told you what to do";
+	var lyric7 = "Hush, hush, hush, here comes the Bogeyman<br/>"+
+				  "Don't let him come too close to you, He'll catch you if he can.<br/>"+
+				  "Just pretend your teddy bear's a dog<br/>"+
+				  "Then shout out, 'Fetch him, Teddy!' and he'll hop off like a frog.";
+	var lyric8 = "Say Meoow, pretend that you're a cat<br/>"+
+		  		  "He'll think you may scratch him that make him fall down flat<br/>"+
+				  "Just pretend he isn't really there<br/>"+
+				  "You will find that Bogey man will vanish in thin air";
+	var lyric9 = "Here's one way to catch him without fail<br/>"+
+			  	  "Just keep a little salt with you<br/>"+
+			  	  "and put it on his tail";
+	var vid = document.getElementById("a_classic");
+	var lyrics = document.getElementById("lyrics");
+	vid.ontimeupdate = function() {updatelyrics()};
+	function updatelyrics() {
+		if (vid.currentTime >= 9.0 && vid.currentTime < 25.0){
+			lyrics.innerHTML = lyric1;
+		}
+		else if (vid.currentTime >= 25.0 && vid.currentTime < 41.0){
+			lyrics.innerHTML = lyric2;
+		}
+		else if (vid.currentTime >= 41.0 && vid.currentTime < 57.0){
+			lyrics.innerHTML = lyric3;
+		}
+		else if (vid.currentTime >= 57.0 && vid.currentTime < 72.0){
+			lyrics.innerHTML = lyric4;	
+		}
+		else if (vid.currentTime >= 80.0 && vid.currentTime < 95.0){
+			lyrics.innerHTML = lyric5;	
+		}
+		else if (vid.currentTime >= 95.0 && vid.currentTime < 111.0){
+			lyrics.innerHTML = lyric6;	
+		}
+		else if (vid.currentTime >= 111.0 && vid.currentTime < 127.0){
+			lyrics.innerHTML = lyric7;	
+		}
+		else if (vid.currentTime >= 135.0 && vid.currentTime < 151.0){
+			lyrics.innerHTML = lyric8;
+		}
+		else if (vid.currentTime >= 158.0 && vid.currentTime < 168.0){
+			lyrics.innerHTML = lyric9;
+		}
+	}
+</script>
+</body>
+</html>	

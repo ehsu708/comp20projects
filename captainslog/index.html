@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Captain's Log</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+         $(document).ready(function(){
+            function sortlocalStorage(){
+                var sortKeys = [];
+                for (i = 0; i < localStorage.length; i++){
+                    //changes string Date to unix timestamp
+                    var storedKey = Date.parse(localStorage.key(i))/1000;
+                    sortKeys[i] = {key: storedKey, message: localStorage.key(i)}
+                }
+                sortKeys.sort(function(a, b){
+                    return b.key - a.key
+                });    
+            }
+            for (var key in localStorage){
+                var sortedKeys = sortlocalStorage();
+                $("#log").prepend(localStorage.getItem(key));
+            }
+            $(document).keypress(function(e) {
+                if(e.which == 13) {
+                    var timestamp = Date();
+                    var addedEntry = $("#msg").val();
+                    var key = timestamp;
+                    var line = timestamp+" - "+addedEntry+"<br>";
+                    $("#log").prepend(line);
+                    localStorage.setItem(key, line);
+                    var message = localStorage.getItem(key);
+                    $("#msg").val("");
+                }
+            });
+         });
+    </script>
+</head>
+
+<body>
+    <h1>Captain's Log</h1>
+    <h3>New entry: <input type="text" id="msg" name="msg" size="30" /></h3>
+    <div id="log"></div>
+</body>
+</html>

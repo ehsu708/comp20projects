@@ -1,0 +1,29 @@
+/*CSS for security/index.html*/
+body {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+}
+img {
+	display: block;
+	margin: 0 auto;
+	width: 800px;
+}
+video {
+	display: block;
+	margin: 0 auto;
+	width: 500px;
+}
+#xsscurl {
+	display: block;
+	margin: 0 auto;
+	width: 700px;
+}
+#xssinjection {
+	display: block;
+	margin: 0 auto;
+	width: 800px;
+}
+.specchar {
+	display: block;
+	margin: 0 auto;
+	width: 600px;
+}
